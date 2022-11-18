@@ -1,0 +1,47 @@
+  <!-- Footer -->
+  <footer class=" text-center text-white" style="background-color: transparent; position: absolute; bottom:0; width: 100%;">
+    <!-- Grid container -->
+    <!-- <div class="container" style="background-color: transparent"> -->
+      <!-- Copyright -->
+
+
+      <div class="row text-center ">
+
+        <div class="col col-md-6 ">
+          <p>© 2022 Copyright
+            <!-- <a class="text-white" href="#">MySite.com</a> -->
+          </p>
+        </div>
+
+        <div class="col col-md-6 ">
+
+
+          <section class="text-center">
+            <!-- <a href="#" class="text-white me-4">
+                <i class="fa fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-white me-4">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+
+              <a href="#" class="text-white me-4">
+                <i class="fa-brands fa-instagram"></i>
+              </a> -->
+            <a href="https://www.linkedin.com/in/ujjwalsrivastava1102/" class="text-white ">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/ujjwal1102/" class="text-white ">
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+          </section>
+        </div>
+      </div>
+
+    <!-- </div> -->
+    <!-- Copyright -->
+  <!-- </div> -->
+  </footer>
+  <!-- Footer -->
+
+  <!-- End of container -->

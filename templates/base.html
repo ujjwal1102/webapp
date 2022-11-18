@@ -26,7 +26,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <link rel="stylesheet" href="{% static 'css/chat.css' %}">
-  
+
 
 
 </head>
@@ -47,7 +47,7 @@
 
 
 
-<body style="min-height: 100vh;">
+<body style="min-height: 100vh; position: relative;">
 
   <!-- <div class="my-bg-body"> -->
   <!-- <div class="content"> -->
@@ -104,69 +104,30 @@
 
 
 
+  <footer class="text-center text-white"
+    style="display:flex; position: absolute; justify-content: space-evenly; width: 100%; bottom: 0;">
+    <div>
+      <p>© 2022 Copyright
 
+      </p>
 
-
-
-
-
-
-  <!-- Footer -->
-  <footer class="page-footer text-center text-white fixed-bottom" style="background-color: transparent">
-    <!-- Grid container -->
-    <div class="container" style="background-color: transparent">
-      <!-- Copyright -->
-
-
-      <div class="row text-center ">
-
-        <div class="col col-md-6 pt-2">
-          <p>© 2022 Copyright
-            <!-- <a class="text-white" href="#">MySite.com</a> -->
-          </p>
-        </div>
-
-        <div class="col col-md-6 pt-2">
-
-
-          <section class="text-center">
-            <!-- <a href="#" class="text-white me-4">
-                <i class="fa fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="#" class="text-white me-4">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-
-              <a href="#" class="text-white me-4">
-                <i class="fa-brands fa-instagram"></i>
-              </a> -->
-            <a href="https://www.linkedin.com/in/ujjwalsrivastava1102/" class="text-white me-4">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/ujjwal1102/" class="text-white me-4">
-              <i class="fa-brands fa-github"></i>
-            </a>
-
-          </section>
-        </div>
-      </div>
 
     </div>
-    <!-- Copyright -->
+    <div style="display:flex;gap: 20px;">
+      <a href="https://www.linkedin.com/in/ujjwalsrivastava1102/" class="text-white">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a href="https://github.com/ujjwal1102/" class="text-white">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+
   </footer>
-  <!-- Footer -->
-
-  <!-- End of container -->
-
-
 
   <script src="{% static 'js/chat_screen.js' %}"></script>
-  
-  
-  
-</body>
 
-</html>
+
 
 </body>
 
