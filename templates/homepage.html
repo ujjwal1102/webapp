@@ -2,7 +2,7 @@
 {% block content %}
   {% if user.is_authenticated %}
 
-    <div class="container">
+    <!--<div class="container">-->
 
       <div class="row d-flex justify-content-center mt-4 text-center">
 
@@ -20,7 +20,7 @@
                   I'm a Generative chatbot, trained on Cornell Movie – Dialogs Corpus Dataset.
 
                   Generative chatbots is the combination of supervised learning, unsupervised learning, reinforcement learning, and adversarial learning for multi-step training.
-                  
+
                   Wait a second when you start chat,Chatbot is being ready.
                 </p>
 
@@ -40,8 +40,8 @@
       <div class="container content">
         <div class=" d-flex align-items-center justify-content-center" style="height: 84.2vh; width: 100%;">
           <div class="col">
-            <h1 class="text-center text-anim head-txt">CHANGE THE WORLD</h1>
-            <p class="text-center text-anim para-txt">With Deep Learning And Machine Learning Concepts</p>
+            <h1 class="text-center text-anim display-1" style="font-family: Poiret One">CHANGE THE WORLD</h1>
+            <p class="text-center text-anim" style="font-family: Space Mono; letter-spacing: .2px; font-size:.85rem;">With Deep Learning And Machine Learning Concepts</p>
 
             <div class="d-flex align-items-center justify-content-center">
               <a class="btn btn-primary mx-1" href="{% url 'login' %}">Login</a>
@@ -54,6 +54,6 @@
         </div>
     </section>
     {% endif %}
-  </div>
+  <!--</div>-->
 
 {% endblock %}

@@ -1,35 +1,48 @@
 from django.shortcuts import render, redirect
-# from django.contrib import messages
-# from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-# from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
+from .forms import UserRegisterForm,LoginForm
 
-# from generative_basd_chatbot.chatbot import ChatBot
-from .forms import UserRegisterForm
-# from django.core.mail import send_mail
-# from django.core.mail import EmailMultiAlternatives
-# from django.template.loader import get_template
-# from django.template import Context
-# from .forms import UserRegisterForm
 
-  
+
 #################### index#######################################
 def index(request):
     return render(request, 'homepage.html', {'page_title':'Homepage'})
+###################### login ###################################
+
+
+
+def user_login(request):
+    if request.method == 'POST':
+
+        # AuthenticationForm_can_also_be_used__
+        form = LoginForm()
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username = username, password = password)
+        if user is not None:
+            form = login(request, user)
+            return redirect('index')
+        else:
+            messages.info(request, f'Please enter correct username or password')
+    form = LoginForm()
+    return render(request, 'login.html', {'form': form, "page_title":"Login"})
+
 
 ########### register here #####################################
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            
-            return redirect('login')
-       
+            user = form.save()
+            login(request,user)
+            return redirect('index')
+
 
     else:
         form = UserRegisterForm()
-    return render(request, 'signup.html', {'form': form, "page_title":"Sign Up",'errors':form.errors})
+        return render(request, 'signup.html', {'form': form, "page_title":"Sign Up",'errors':form.errors})
 
 
 @login_required
@@ -47,7 +60,7 @@ def about(request):
 
 #         form = Login(request.POST)
 #         #AuthenticationForm_can_also_be_used__
-  
+
 #         username = request.POST['username']
 #         password = request.POST['password']
 #         user = authenticate(request, username = username, password = password)

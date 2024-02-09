@@ -3,11 +3,27 @@
 
 <section>
     <script>
-        var ws = new WebSocket(
-    'ws://'
-    + window.location.host
-    + '/ws/wsc/'
-);
+    //     var ws = new WebSocket(
+    // 'wss://'
+    // + window.location.host
+    // + '/ws/wsc'
+    // // + ':8000'
+    // + window.location.pathname
+
+    // );
+
+    var wsStart = 'ws://'
+    var hostName = window.location.host
+    if (window.location.protocol.includes('https')){
+        wsStart = 'wss://'
+        hostName = window.location.hostname
+    };
+
+    let endpoint = wsStart + hostName +'/ws/wsc/'
+    var ws = new WebSocket(endpoint)
+
+
+
 ws.onopen = function () {
     console.log('Websocket Connection Open...')
     var msg = document.getElementById('send-btn').value
@@ -65,10 +81,10 @@ ws.onclose = function (event) {
                     if (key.key === 'Enter')
                         {user_message();}
                 }
-            
+
             })
-            
-            
+
+
 
         }
 
@@ -101,7 +117,7 @@ ws.onclose = function (event) {
                         <!-- <a class="btn ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a> -->
                         <!-- <a class=" btn ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a> -->
                         <!-- <button class="btn" id="sendbtn" onclick="user_message()">Send</button> -->
-                
+
                         <a class="ms-1 btn rounded-4 p-2" id="sendbtn" onclick="btn_click()" ><i class="fas fa-paper-plane"
                                 ></i></a>
                     </div>
